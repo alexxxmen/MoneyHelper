@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'notebook'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -55,7 +56,8 @@ ROOT_URLCONF = 'MoneyHelper.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),
+                 os.path.join(BASE_DIR, 'notebook/templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {

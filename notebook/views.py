@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect, Http404, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from notebook.models import Note, Category
-from django.core.exceptions import ObjectDoesNotExist
+
 
 
 def main(request):
