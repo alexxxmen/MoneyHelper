@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from notebook.models import Note, Category
 
 
-
 def main(request):
     notes = Note.objects.all()
     categories = Category.objects.all()
