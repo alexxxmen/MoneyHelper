@@ -10,7 +10,7 @@ class Category(models.Model):
 
 class Note(models.Model):
     title = models.CharField(max_length=100)  # Возможно сделать не обязательным
-    date_create = models.DateTimeField()  # Поле для даты и времени создания записи
+    date_create = models.DateTimeField(auto_now=True, blank=True)  # Поле для даты и времени создания записи
     text = models.TextField()
     category = models.ForeignKey(Category)
 
