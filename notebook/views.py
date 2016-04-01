@@ -16,7 +16,7 @@ def add_note(request):
 
 def note_delete(request, note_id):
     note = get_object_or_404(Note, id=note_id)
-    note.delete()
+    note.delete() if note else None
     return redirect('/notebook/')
 
 
@@ -36,6 +36,9 @@ def get_note(request, note_id):
 
 
 def get_category(request, category_id):
+    """
+    *Возможно не понадобится.
+    """
     pass
 
 
