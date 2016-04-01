@@ -6,6 +6,6 @@
         <br>
         <br>Date of create: {{ note.date_create }}
         <br>Category: {{ note.category }}<br>
-        <a href="delete/">Удалить </a><a href="edit/">Редактировать</a>
+        <a href="/notebook/note/{{ note.id }}/delete/">Удалить </a><a href="/notebook/note/{{ note.id }}/edit/">Редактировать</a>
     </div>
 {% endblock %}

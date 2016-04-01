@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, Http404
 from notebook.models import Note, Category
 from MoneyHelper import CONST
+from django.core.exceptions import ObjectDoesNotExist
 
 
 def main(request):
@@ -49,6 +50,8 @@ def get_notes(request, category_id):
         "title": category.title + " : " + CONST.PROJECT_NAME
     }
     return render(request, 'notebook_notes_cat.html', context)
+
+
 
 
 def get_category(request, category_id):

@@ -3,10 +3,10 @@ from notebook import views
 
 urlpatterns = [
     url(r'^$', views.main),
-    url(r'^add/$', views.add_note),
-    url(r'^(?P<note_id>\d+)/$', views.get_note),
-    url(r'^(?P<note_id>\d+)/delete/$', views.note_delete),
-    url(r'^(?P<note_id>\d+)/edit/$', views.note_edit),
+    url(r'^note/add/$', views.add_note),
+    url(r'^note/(?P<note_id>\d+)/$', views.get_note),
+    url(r'^note/(?P<note_id>\d+)/delete/$', views.note_delete),
+    url(r'^note/(?P<note_id>\d+)/edit/$', views.note_edit),
     url(r'^category/$', views.get_categories),
     url(r'^category/add/$', views.category_add),
     url(r'^category/(?P<category_id>\d+)/$', views.get_notes),
