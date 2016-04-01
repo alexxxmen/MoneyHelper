@@ -9,7 +9,7 @@ urlpatterns = [
     url(r'^(?P<note_id>\d+)/edit/$', views.note_edit),
     url(r'^category/$', views.get_categories),
     url(r'^category/add/$', views.category_add),
-    url(r'^category/(?P<category_id>\d+)/$', views.get_category),
+    url(r'^category/(?P<category_id>\d+)/$', views.get_notes),
     url(r'^category/(?P<category_id>\d+)/delete/$', views.category_delete),
     url(r'^category/(?P<category_id>\d+)/edit/$', views.category_edit),
 ]

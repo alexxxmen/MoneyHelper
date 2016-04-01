@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from notebook.models import Note, Category
+from MoneyHelper import CONST
 
 
 def main(request):
@@ -35,6 +36,21 @@ def get_note(request, note_id):
     return render(request, 'notebook_note.html', context)
 
 
+def get_notes(request, category_id):
+    """
+    Return template with notes filtered by category_id
+    """
+    notes = Note.objects.filter(category=category_id)
+    categories = Category.objects.all()
+    category = get_object_or_404(Category, id=category_id)
+    context = {
+        "notes": notes,
+        "categories": categories,
+        "title": category.title + " : " + CONST.PROJECT_NAME
+    }
+    return render(request, 'notebook_notes_cat.html', context)
+
+
 def get_category(request, category_id):
     """
     *Возможно не понадобится.
@@ -44,7 +60,7 @@ def get_category(request, category_id):
 
 def get_categories(request):
     categories = Category.objects.all()
-    return render(request, 'notebook_category.html')
+    return render(request, 'notebook_categories.html')
 
 
 def category_add(request):
